@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    php:
+        build:
+            context: .
+            dockerfile: ./.docker/Dockerfile
+        ports:
+            - "80:80"
+        extra_hosts:
+            host.docker.internal: host-gateway
+        volumes:
+            - /tmp/xdebug:/tmp/xdebug
+
